@@ -1,0 +1,257 @@
+@import './variables.less';
+
+:root {
+  --color-gray-50: @gray-50;
+  --color-gray-100: @gray-100;
+  --color-gray-200: @gray-200;
+  --color-gray-300: @gray-300;
+  --color-gray-400: @gray-400;
+  --color-gray-500: @gray-500;
+  --color-gray-600: @gray-600;
+  --color-gray-700: @gray-700;
+  --color-gray-900: @gray-900;
+  --color-neutral-3: @neutral-3;
+  --color-neutral-4: @neutral-4;
+  --color-neutral-6: @neutral-6;
+  --color-neutral-7: @neutral-7;
+  --color-primary-25: @primary-25;
+  --color-primary-50: @primary-50;
+  --color-primary-200: @primary-200;
+  --color-primary-300: @primary-300;
+  --color-primary-600: @primary-600;
+  --color-primary-700: @primary-700;
+  --color-primary-800: @primary-800;
+  --color-primary-900: @primary-900;
+  --color-primary: @primary;
+  --color-success: @success;
+  --text-main: @text-main;
+  --bs-primary: @primary;
+  --bs-danger: @danger;
+  --bs-danger-rgb: 240, 68, 56;
+  --bs-success: @success;
+  --bs-success-rgb: 75, 178, 39;
+  // --bs-body-bg: #f8f9fa;
+  --bs-gutter-x: 1.875rem;
+  --bs-body-color: @text-main;
+  --bs-body-font-family: 'Inter', var(--bs-font-sans-serif);
+  --bs-link-color: @link-color;
+  --bs-link-hover-color: lighten(@link-color, 10%);
+  --bs-border-color: var(--color-gray-200);
+}
+
+/** alert **/
+.alert {
+  --bs-alert-border-radius: .75rem;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4285714285;
+}
+.alert-primary {
+  --bs-alert-bg: var(--color-primary-25);
+  --bs-alert-color: var(--color-primary);
+  --bs-alert-border-color: var(--color-primary-300);
+}
+
+/** badge **/
+.badge {
+  --bs-badge-bg: var(--color-gray-100);
+  --bs-badge-color: var(--color-gray-700);
+  --bs-badge-padding-x: 0.5rem;
+  --bs-badge-padding-y: 0.125rem;
+  --bs-badge-font-size: 0.75rem;
+  --bs-badge-font-weight: 500;
+  --bs-badge-line-height: 1.5;
+  --bs-badge-border-radius: 6px;
+
+  line-height: var(--bs-badge-line-height);
+  background-color: var(--bs-badge-bg);
+
+  &-outline {
+    --bs-badge-bg: transparent;
+    --bs-badge-border-width: 1px;
+    --bs-badge-border-color: var(--color-gray-300);
+
+    border: var(--bs-badge-border-width) solid var(--bs-badge-border-color);
+  }
+
+  &-lg {
+    --bs-badge-padding-x: 0.625rem;
+    --bs-badge-font-size: 0.875rem;
+    --bs-badge-line-height: 1.4286;
+    --bs-badge-border-radius: 1rem;
+  }
+
+  &-success {
+    --bs-badge-bg: #ecfdf3;
+    --bs-badge-color: var(--color-success);
+  }
+  &-success > &-dot {
+    display: inline-block;
+    vertical-align: middle;
+    width: 6px;
+    height: 6px;
+    margin-top: -2px;
+    margin-right: 4px;
+    border-radius: 50%;
+    background: #12b76a;
+  }
+
+  &-primary {
+    --bs-badge-bg: var(--color-primary-50);
+    --bs-badge-color: var(--color-primary);
+  }
+  &-primary > &-dot {
+    display: inline-block;
+    vertical-align: middle;
+    width: 6px;
+    height: 6px;
+    margin-top: -2px;
+    margin-right: 4px;
+    border-radius: 50%;
+    background: #12b76a;
+  }
+}
+
+/** btn **/
+.btn {
+  --bs-btn-padding-y: 0.45rem;
+  --bs-btn-font-size: 0.875rem;
+  --bs-btn-font-weight: 600;
+  --bs-btn-line-height: 1.4285;
+  --bs-btn-border-radius: .5rem;
+
+  box-shadow: 0 1px 2px rgb(16 24 40 / 5%);
+
+  &-lg {
+    --bs-btn-padding-y: 0.65rem;
+    --bs-btn-font-size: 1rem;
+    --bs-btn-line-height: 1.5;
+  }
+
+  &-primary {
+    --bs-btn-bg: @primary;
+    --bs-btn-border-color: @primary;
+    --bs-btn-hover-bg: darken(@primary, 5%);
+    --bs-btn-hover-border-color: darken(@primary, 5%);
+    --bs-btn-active-bg: darken(@primary, 10%);
+    --bs-btn-active-border-color: darken(@primary, 10%);
+    --bs-btn-disabled-bg: var(--color-primary-200);
+    --bs-btn-disabled-border-color: var(--color-primary-200);
+  }
+
+  &-secondary {
+    --bs-btn-bg: @gray-100;
+    --bs-btn-color: @text-main;
+    --bs-btn-border-color: @gray-300;
+    --bs-btn-hover-bg: @gray-200;
+    --bs-btn-hover-color: @text-main;
+    --bs-btn-hover-border-color: @gray-400;
+    --bs-btn-active-bg: @gray-300;
+    --bs-btn-active-color: @text-main;
+    --bs-btn-active-border-color: @gray-400;
+  }
+
+  &-outline-secondary {
+    --bs-btn-color: #344054;
+    --bs-btn-border-color: @gray-300;
+    --bs-btn-active-color: var(--bs-btn-color);
+    --bs-btn-active-bg: #F9FAFB;
+    --bs-btn-active-border-color: @gray-300;
+  }
+
+  &-light {
+    --bs-btn-color: var(--text-main);
+    --bs-btn-bg: @white;
+    --bs-btn-border-color: @gray-300;
+    --bs-btn-hover-color: var(--text-main);
+    --bs-btn-hover-bg: darken(@white, 5%);
+    --bs-btn-hover-border-color: darken(@white, 5%);
+    --bs-btn-active-color: var(--text-main);
+    --bs-btn-active-bg: darken(@white, 10%);
+    --bs-btn-active-border-color: darken(@white, 10%);
+    --bs-btn-disabled-color: var(--color-gray-300);
+    --bs-btn-disabled-bg: @white;
+    --bs-btn-disabled-border-color: var(--color-gray-200);
+  }
+
+  &-dark {
+    --bs-btn-bg: @text-main;
+    --bs-btn-border-color: @text-main;
+    --bs-btn-hover-bg: lighten(@text-main, 5%);
+    --bs-btn-hover-border-color: lighten(@text-main, 5%);
+    --bs-btn-active-bg: lighten(@text-main, 10%);
+    --bs-btn-active-border-color: lighten(@text-main, 10%);
+    --bs-btn-disabled-bg: rgb(@text-main 0.4);
+    --bs-btn-disabled-border-color: rgb(@text-main 0.4);
+  }
+}
+
+/** card **/
+.card {
+  --bs-card-spacer-x: 16px;
+  --bs-card-spacer-y: 16px;
+  --bs-card-border-radius: 12px;
+  --bs-card-border-color: var(--color-gray-200);
+  --bs-card-box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
+}
+@media screen and (min-width: 992px) {
+  .card {
+    --bs-card-spacer-x: 24px;
+    --bs-card-spacer-y: 24px;
+  }
+}
+
+/** utilities **/
+.text-gray-lighter {
+  --bs-color: var(--color-gray-200);
+  color: var(--color-gray-200);
+}
+
+.text-gray-light {
+  --bs-color: var(--color-gray-400);
+  color: var(--color-gray-400);
+}
+
+.text-gray {
+  --bs-color: var(--color-gray-600);
+  color: var(--color-gray-600);
+}
+
+.text-gray-dark {
+  --bs-color: var(--color-gray-700);
+  color: var(--color-gray-700);
+}
+
+.text-gray-darker {
+  --bs-color: var(--color-gray-800);
+  color: var(--color-gray-800);
+}
+
+.text-neutral {
+  --bs-color: var(--color-neutral-4);
+  color: var(--color-neutral-4);
+}
+
+.text-primary {
+  --bs-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.fs-30 {
+  font-size: 1.5rem;
+}
+
+.fs-24 {
+  font-size: 1.25rem;
+}
+
+@media screen and (min-width: 992px) {
+  .fs-30 {
+    font-size: 1.875rem;
+  }
+
+  .fs-24 {
+    font-size: 1.5rem;
+  }
+}

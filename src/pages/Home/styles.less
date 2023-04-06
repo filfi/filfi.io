@@ -1,0 +1,159 @@
+// xs | sm
+.banner {
+  --banner-max-height: 645px;
+  --banner-min-height: 645px;
+  --banner-title-size: 30px;
+  --banner-desc-size: 14px;
+
+  height: 100vh;
+  max-height: var(--banner-max-height);
+  min-height: var(--banner-min-height);
+  color: var(--color-primary-900);
+  background-color: var(--color-primary-50);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url('./imgs/bg_banner.png');
+
+  :global {
+    .badge {
+      --bs-badge-padding-x: 10px;
+      --bs-badge-padding-y: 4px;
+      --bs-badge-bg: var(--color-primary-50);
+      --bs-badge-color: var(--color-primary-700);
+
+      mix-blend-mode: multiply;
+
+      > .badge {
+        --bs-badge-bg: #fff;
+        --bs-badge-padding-x: 8px;
+        --bs-badge-padding-y: 2px;
+
+        margin-left: -6px;
+        mix-blend-mode: normal;
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: 24px;
+    font-size: var(--banner-title-size);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .desc {
+    margin-bottom: 48px;
+    font-size: var(--banner-desc-size);
+    line-height: 1.5;
+  }
+}
+
+.bg {
+  background-color: #F1F9FF;
+}
+
+.section {
+  --section-padding-x: 0;
+  --section-padding-y: 40px;
+  --section-font-size: 14px;
+  --section-label-font-size: 18px;
+  --section-title-margin-y: 12px;
+  --section-title-font-size: 24px;
+  --section-subtitle-margin-y: 20px;
+  --section-subtitle-font-size: 20px;
+
+  padding: var(--section-padding-y) var(--section-padding-x);
+  font-size: var(--section-font-size);
+  line-height: 1.5;
+  overflow: hidden;
+
+  .title {
+    margin-bottom: var(--section-title-margin-y);
+    font-size: var(--section-title-font-size);
+    font-weight: 600;
+    line-height: 1.23;
+  }
+
+  .subtitle {
+    margin-bottom: var(--section-subtitle-margin-y);
+    font-size: var(--section-subtitle-font-size);
+    font-weight: 600;
+    line-height: 1.333;
+  }
+
+  .label {
+    font-size: var(--section-label-font-size);
+    line-height: 1.5;
+  }
+
+  .bolder {
+    font-weight: 500;
+  }
+}
+
+.accordion {
+  --bs-accordion-color: inherit;
+  --bs-accordion-btn-padding-x: 0;
+  --bs-accordion-btn-padding-y: 20px;
+  --bs-accordion-btn-font-size: 16px;
+  --bs-accordion-btn-focus-border-color: unset;
+  --bs-accordion-btn-focus-box-shadow: unset;
+  --bs-accordion-active-color: unset;
+  --bs-accordion-active-bg: unset;
+  --bs-accordion-btn-icon: url('~@/assets/icons/plus-circle.svg');
+  --bs-accordion-btn-active-icon: url('~@/assets/icons/minus-circle.svg');
+
+  :global {
+    .accordion-button {
+      font-size: var(--bs-accordion-btn-font-size);
+      font-weight: 500;
+      line-height: 1.5;
+      box-shadow: none;
+    }
+
+    .accordion-body {
+      padding-top: 8px;
+    }
+  }
+}
+
+// md
+@media screen and (min-width: 768px) {
+  .banner {
+    --banner-title-size: 60px;
+    --banner-desc-size: 20px;
+  }
+
+  .section {
+    --section-padding-y: 64px;
+  }
+}
+
+// lg
+@media screen and (min-width: 992px) {
+  // .banner {
+  //   --banner-title-size: 60px;
+  // }
+  .section {
+    --section-padding-y: 80px;
+    --section-font-size: 16px;
+    --section-label-font-size: 20px;
+    --section-title-margin-y: 20px;
+    --section-title-font-size: 36px;
+    --section-subtitle-margin-y: 32px;
+    --section-subtitle-font-size: 24px;
+  }
+
+  .accordion {
+    // --bs-accordion-btn-padding-y: 24px;
+    --bs-accordion-btn-font-size: 18px;
+  }
+}
+
+// xl
+@media screen and (min-width: 1200px) {
+  .section {
+    --section-padding-y: 96px;
+  }
+}
