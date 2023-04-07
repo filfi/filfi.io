@@ -57,7 +57,7 @@ export default function Home() {
             </button>
             <a
               className="btn btn-light btn-lg order-md-1"
-              href="https://docs.filfi.io"
+              href="https://docs.filfi.io/en/introduction.html"
               target="_blank"
               rel="noreferrer"
             >
