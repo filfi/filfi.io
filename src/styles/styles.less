@@ -7,6 +7,8 @@ body {
 
 #root {
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -16,7 +18,6 @@ body {
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857142;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,14 +31,9 @@ a {
   padding-bottom: 0.01px;
 }
 
-// #root {
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// .ff-layout-main {
-//   flex: 1 1 auto;
-// }
+.ff-layout-main {
+  flex: 1 1 auto;
+}
 
 // .ff-layout-main .container {
 //   max-width: calc(var(--bs-gutter-x, 0) + 50rem);
@@ -46,7 +42,7 @@ a {
 .table-card {
   border-radius: 12px;
   border: 1px solid var(--color-gray-200);
-  box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
+  box-shadow: 0 1px 3px rgb(16 24 40 / 10%), 0 1px 2px rgb(16 24 40 / 6%);
 
   .table {
     --bs-table-color: var(--color-gray-600);
@@ -115,6 +111,7 @@ a {
   z-index: 100;
   top: var(--header-height);
 }
+
 .letsfil-form {
   margin-left: auto;
   margin-right: auto;
@@ -129,6 +126,7 @@ a {
     font-weight: 500;
   }
 }
+
 .letsfil-actions {
   --min-width: 80px;
 
@@ -159,7 +157,8 @@ a {
       color: var(--color-gray-700);
     }
 
-    .ant-form-item-explain, .ant-form-item-extra {
+    .ant-form-item-explain,
+    .ant-form-item-extra {
       color: var(--color-gray-400);
       margin-bottom: 24px;
     }
@@ -172,13 +171,16 @@ a {
     border-radius: 8px;
     border-color: var(--color-gray-300);
   }
+
   .ant-input,
   .ant-picker {
-    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+    box-shadow: 0 1px 2px rgb(16 24 40 / 5%);
   }
+
   .ant-input:read-only {
-    background-color: #F9FAFB;
+    background-color: #f9fafb;
   }
+
   .ant-input-affix-wrapper {
     padding: 0;
     border-radius: 8px;
@@ -191,15 +193,17 @@ a {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
       }
+
       &:not(:first-child) {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
       }
 
       &:read-only ~ .ant-input-suffix {
-        background-color: #F9FAFB;
+        background-color: #f9fafb;
       }
     }
+
     .ant-input-prefix,
     .ant-input-suffix {
       padding: 8px 12px;
@@ -210,25 +214,30 @@ a {
       border-top-left-radius: 8px;
       border-bottom-left-radius: 8px;
     }
+
     .ant-input-suffix {
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
     }
   }
+
   .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
     height: 40px;
   }
 
-  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
+  .ant-select-single:not(.ant-select-customize-input)
+    .ant-select-selector
+    .ant-select-selection-search-input {
     height: 40px;
   }
+
   .ant-select-single .ant-select-selector .ant-select-selection-item,
   .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
     line-height: 38px;
   }
 
   .ant-input-group {
-    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+    box-shadow: 0 1px 2px rgb(16 24 40 / 5%);
 
     .ant-input-group-addon {
       color: var(--color-gray-900);
@@ -240,13 +249,21 @@ a {
       box-shadow: none;
 
       &:not(:last-child),
-      &.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless):not(:last-child):focus,
-      &.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless):not(:last-child).ant-input-focused {
+      &.ant-input-status-error:not(.ant-input-disabled):not(
+          .ant-input-borderless
+        ):not(:last-child):focus,
+      &.ant-input-status-error:not(.ant-input-disabled):not(
+          .ant-input-borderless
+        ):not(:last-child).ant-input-focused {
         border-right-width: 0;
       }
 
-      &.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless):focus,
-      &.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input-focused {
+      &.ant-input-status-error:not(.ant-input-disabled):not(
+          .ant-input-borderless
+        ):focus,
+      &.ant-input-status-error:not(.ant-input-disabled):not(
+          .ant-input-borderless
+        ).ant-input-focused {
         box-shadow: none;
       }
 
@@ -255,11 +272,14 @@ a {
       }
 
       &:read-only ~ .ant-input-group-addon {
-        background-color: #F9FAFB;
+        background-color: #f9fafb;
       }
 
-      &.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless) ~ .ant-input-group-addon {
-         border-color: #ff4d4f;
+      &.ant-input-status-error:not(.ant-input-disabled):not(
+          .ant-input-borderless
+        )
+        ~ .ant-input-group-addon {
+        border-color: #ff4d4f;
       }
     }
   }

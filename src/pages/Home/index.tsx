@@ -145,60 +145,65 @@ export default function Home() {
 
           <div className="row row-cols-1 row-cols-lg-2 g-3 g-lg-0">
             <div className="col py-3">
-              <div className="row row-cols-1 row-cols-md-2 g-3">
-                <div className="col">
-                  <div className="h-100">
-                    <p className="mb-3">
-                      <IconStaking />
-                    </p>
-                    <h4 className={classNames(styles.label, 'fw-semibold')}>
-                      Staking
-                    </h4>
-                    <p className="mb-0 text-gray">
-                      Deposite FIL and earn passive income
-                    </p>
+              <div className="h-100 d-flex flex-column justify-content-center">
+                <h4 className={classNames(styles.subtitle, 'mb-lg-5')}>
+                  What we offer to Filecoin holders
+                </h4>
+                <div className="row row-cols-1 row-cols-md-2 g-3">
+                  <div className="col">
+                    <div className="h-100">
+                      <p className="mb-3">
+                        <IconStaking />
+                      </p>
+                      <h4 className={classNames(styles.label, 'fw-semibold')}>
+                        Staking
+                      </h4>
+                      <p className="mb-0 text-gray">
+                        Deposite FIL and earn passive income
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="col">
-                  <div className="h-100">
-                    <p className="mb-3">
-                      <IconMining />
-                    </p>
-                    <h4 className={classNames(styles.label, 'fw-semibold')}>
-                      Mining
-                    </h4>
-                    <p className="mb-0 text-gray">
-                      Investing in storage power with FilFi is transparent
-                      enough to reduce the risk of fraud and black boxes
-                    </p>
+                  <div className="col">
+                    <div className="h-100">
+                      <p className="mb-3">
+                        <IconMining />
+                      </p>
+                      <h4 className={classNames(styles.label, 'fw-semibold')}>
+                        Mining
+                      </h4>
+                      <p className="mb-0 text-gray">
+                        Investing in storage power with FilFi is transparent
+                        enough to reduce the risk of fraud and black boxes
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="col">
-                  <div className="h-100">
-                    <p className="mb-3">
-                      <IconTrading />
-                    </p>
-                    <h4 className={classNames(styles.label, 'fw-semibold')}>
-                      Trading
-                    </h4>
-                    <p className="mb-0 text-gray">
-                      With the power NFT minted by FilFi, investors can trade
-                      power in any scale, opening up liquidity for miner.
-                    </p>
+                  <div className="col">
+                    <div className="h-100">
+                      <p className="mb-3">
+                        <IconTrading />
+                      </p>
+                      <h4 className={classNames(styles.label, 'fw-semibold')}>
+                        Trading
+                      </h4>
+                      <p className="mb-0 text-gray">
+                        With the power NFT minted by FilFi, investors can trade
+                        power in any scale, opening up liquidity for miner.
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="col">
-                  <div className="h-100">
-                    <p className="mb-3">
-                      <IconDeFi />
-                    </p>
-                    <h4 className={classNames(styles.label, 'fw-semibold')}>
-                      Cross Defi
-                    </h4>
-                    <p className="mb-0 text-gray">
-                      Every staked fil is live, you can put stFIL in other Defi
-                      for stacked gains. Keep FIL flowing, not sleeping.
-                    </p>
+                  <div className="col">
+                    <div className="h-100">
+                      <p className="mb-3">
+                        <IconDeFi />
+                      </p>
+                      <h4 className={classNames(styles.label, 'fw-semibold')}>
+                        Cross Defi
+                      </h4>
+                      <p className="mb-0 text-gray">
+                        Every staked fil is live, you can put stFIL in other
+                        Defi for stacked gains. Keep FIL flowing, not sleeping.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -206,14 +211,14 @@ export default function Home() {
             <div className="col">
               <div
                 className={classNames(
-                  'h-100 d-flex align-items-center ms-lg-3',
+                  'h-100 d-flex align-items-center ms-lg-3 ms-xl-5',
                   styles.bg,
                 )}
               >
                 <img
                   className="img-fluid"
                   src={require('./imgs/value_holder.png')}
-                  alt="What's  the value for Filecoin holders?"
+                  alt="What we offer to Filecoin holders"
                 />
               </div>
             </div>
@@ -240,9 +245,7 @@ export default function Home() {
             </div>
           </div>
 
-          <h4 className={styles.subtitle}>
-            What’s the value for Storage Provider?
-          </h4>
+          <h4 className={styles.subtitle}>What we offer to Storage Provider</h4>
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
             <div className="col">
               <div
