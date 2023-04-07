@@ -41,12 +41,13 @@
 
 /** alert **/
 .alert {
-  --bs-alert-border-radius: .75rem;
+  --bs-alert-border-radius: 0.75rem;
 
   font-size: 14px;
   font-weight: 600;
   line-height: 1.4285714285;
 }
+
 .alert-primary {
   --bs-alert-bg: var(--color-primary-25);
   --bs-alert-color: var(--color-primary);
@@ -86,6 +87,7 @@
     --bs-badge-bg: #ecfdf3;
     --bs-badge-color: var(--color-success);
   }
+
   &-success > &-dot {
     display: inline-block;
     vertical-align: middle;
@@ -101,6 +103,7 @@
     --bs-badge-bg: var(--color-primary-50);
     --bs-badge-color: var(--color-primary);
   }
+
   &-primary > &-dot {
     display: inline-block;
     vertical-align: middle;
@@ -119,7 +122,7 @@
   --bs-btn-font-size: 0.875rem;
   --bs-btn-font-weight: 600;
   --bs-btn-line-height: 1.4285;
-  --bs-btn-border-radius: .5rem;
+  --bs-btn-border-radius: 0.5rem;
 
   box-shadow: 0 1px 2px rgb(16 24 40 / 5%);
 
@@ -156,7 +159,7 @@
     --bs-btn-color: #344054;
     --bs-btn-border-color: @gray-300;
     --bs-btn-active-color: var(--bs-btn-color);
-    --bs-btn-active-bg: #F9FAFB;
+    --bs-btn-active-bg: #f9fafb;
     --bs-btn-active-border-color: @gray-300;
   }
 
@@ -193,7 +196,8 @@
   --bs-card-spacer-y: 16px;
   --bs-card-border-radius: 12px;
   --bs-card-border-color: var(--color-gray-200);
-  --bs-card-box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
+  --bs-card-box-shadow: 0 1px 3px rgb(16 24 40 / 10%),
+    0 1px 2px rgb(16 24 40 / 6%);
 }
 @media screen and (min-width: 992px) {
   .card {
@@ -205,53 +209,42 @@
 /** utilities **/
 .text-gray-lighter {
   --bs-color: var(--color-gray-200);
+
   color: var(--color-gray-200);
 }
 
 .text-gray-light {
   --bs-color: var(--color-gray-400);
+
   color: var(--color-gray-400);
 }
 
 .text-gray {
   --bs-color: var(--color-gray-600);
+
   color: var(--color-gray-600);
 }
 
 .text-gray-dark {
   --bs-color: var(--color-gray-700);
+
   color: var(--color-gray-700);
 }
 
 .text-gray-darker {
   --bs-color: var(--color-gray-800);
+
   color: var(--color-gray-800);
 }
 
 .text-neutral {
   --bs-color: var(--color-neutral-4);
+
   color: var(--color-neutral-4);
 }
 
 .text-primary {
   --bs-color: var(--color-primary);
+
   color: var(--color-primary);
-}
-
-.fs-30 {
-  font-size: 1.5rem;
-}
-
-.fs-24 {
-  font-size: 1.25rem;
-}
-
-@media screen and (min-width: 992px) {
-  .fs-30 {
-    font-size: 1.875rem;
-  }
-
-  .fs-24 {
-    font-size: 1.5rem;
-  }
 }

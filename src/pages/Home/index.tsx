@@ -16,6 +16,12 @@ import { ReactComponent as Dao3 } from './imgs/dao-03.svg';
 import { ReactComponent as Dao4 } from './imgs/dao-04.svg';
 import { ReactComponent as Dao5 } from './imgs/dao-05.svg';
 import { ReactComponent as Dao6 } from './imgs/dao-06.svg';
+import { ReactComponent as Ecos1 } from './imgs/ecos-1.svg';
+import { ReactComponent as Ecos2 } from './imgs/ecos-2.svg';
+import { ReactComponent as Ecos3 } from './imgs/ecos-3.svg';
+import { ReactComponent as Ecos4 } from './imgs/ecos-4.svg';
+import { ReactComponent as Ecos5 } from './imgs/ecos-5.svg';
+import { ReactComponent as Ecos6 } from './imgs/ecos-6.svg';
 
 export default function Home() {
   const goto = () => {
@@ -84,7 +90,7 @@ export default function Home() {
             <div className="col">
               <div className="card h-100 border-0 border-top rounded-0 shadow-none">
                 <div className="card-body">
-                  <h4 className={classNames('mb-2 fw-semibold', styles.label)}>
+                  <h4 className={classNames('mb-2 fw-600', styles.label)}>
                     Staker
                   </h4>
                   <p className="text-gray">
@@ -97,7 +103,7 @@ export default function Home() {
             <div className="col">
               <div className="card h-100 border-0 border-top rounded-0 shadow-none">
                 <div className="card-body">
-                  <h4 className={classNames('mb-2 fw-semibold', styles.label)}>
+                  <h4 className={classNames('mb-2 fw-600', styles.label)}>
                     Pool
                   </h4>
                   <p className="text-gray">
@@ -110,7 +116,7 @@ export default function Home() {
             <div className="col">
               <div className="card h-100 border-0 border-top rounded-0 shadow-none">
                 <div className="card-body">
-                  <h4 className={classNames('mb-2 fw-semibold', styles.label)}>
+                  <h4 className={classNames('mb-2 fw-600', styles.label)}>
                     Storage Provider
                   </h4>
                   <p className="text-gray">
@@ -155,7 +161,7 @@ export default function Home() {
                       <p className="mb-3">
                         <IconStaking />
                       </p>
-                      <h4 className={classNames(styles.label, 'fw-semibold')}>
+                      <h4 className={classNames(styles.label, 'fw-600')}>
                         Staking
                       </h4>
                       <p className="mb-0 text-gray">
@@ -168,7 +174,7 @@ export default function Home() {
                       <p className="mb-3">
                         <IconMining />
                       </p>
-                      <h4 className={classNames(styles.label, 'fw-semibold')}>
+                      <h4 className={classNames(styles.label, 'fw-600')}>
                         Mining
                       </h4>
                       <p className="mb-0 text-gray">
@@ -182,7 +188,7 @@ export default function Home() {
                       <p className="mb-3">
                         <IconTrading />
                       </p>
-                      <h4 className={classNames(styles.label, 'fw-semibold')}>
+                      <h4 className={classNames(styles.label, 'fw-600')}>
                         Trading
                       </h4>
                       <p className="mb-0 text-gray">
@@ -196,7 +202,7 @@ export default function Home() {
                       <p className="mb-3">
                         <IconDeFi />
                       </p>
-                      <h4 className={classNames(styles.label, 'fw-semibold')}>
+                      <h4 className={classNames(styles.label, 'fw-600')}>
                         Cross Defi
                       </h4>
                       <p className="mb-0 text-gray">
@@ -236,11 +242,9 @@ export default function Home() {
             <div className="col-12 col-md-10 col-lg-8">
               <h3 className={styles.title}>Designed for Storage Provider</h3>
               <p className={classNames('text-gray', styles.label)}>
-                It&apos;s simple to stake and enjoy passive earning. But
-                it&apos;s not enough because returns from staking pools on
-                Filecoin are affected by changes in lending supply and demand.
-                Sometimes we need to mine directly to optimize our portfolios.
-                FilFi understands the market and offers more choices to invest.
+                FilFi is designed to unlock SP liquidity in many way. Existing
+                storage power is tokenized as NFT which can be collateralized,
+                be sold. SP also can raise FIL to build new power.
               </p>
             </div>
           </div>
@@ -258,7 +262,7 @@ export default function Home() {
                   <p className="mb-5">
                     <IconBorrow />
                   </p>
-                  <h4 className={classNames(styles.label, 'fw-semibold')}>
+                  <h4 className={classNames(styles.label, 'fw-600')}>
                     Borrowing
                   </h4>
                   <p className="mb-0 text-gray">
@@ -279,7 +283,7 @@ export default function Home() {
                   <p className="mb-5">
                     <IconRaise />
                   </p>
-                  <h4 className={classNames(styles.label, 'fw-semibold')}>
+                  <h4 className={classNames(styles.label, 'fw-600')}>
                     Raising
                   </h4>
                   <p className="mb-0 text-gray">
@@ -300,7 +304,7 @@ export default function Home() {
                   <p className="mb-5">
                     <IconToken />
                   </p>
-                  <h4 className={classNames(styles.label, 'fw-semibold')}>
+                  <h4 className={classNames(styles.label, 'fw-600')}>
                     Tokenizing
                   </h4>
                   <p className="mb-0 text-gray">
@@ -321,7 +325,7 @@ export default function Home() {
                   <p className="mb-5">
                     <IconBuild />
                   </p>
-                  <h4 className={classNames(styles.label, 'fw-semibold')}>
+                  <h4 className={classNames(styles.label, 'fw-600')}>
                     Building
                   </h4>
                   <p className="mb-0 text-gray">
@@ -364,6 +368,137 @@ export default function Home() {
         <div className="container">
           <div className="row text-center mb-3 mb-md-4 mb-lg-5">
             <div className="col-12 col-md-10 col-lg-8 offset-md-1 offset-lg-2">
+              <h3 className={styles.title}>
+                Building business in the FilFi ecosystem
+              </h3>
+              <p className={classNames(styles.label, 'text-gray')}>
+                The FilFi ecosystem has many opportunities to gain revenue for
+                the builders who provide value to Filecoin network.
+              </p>
+            </div>
+          </div>
+
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 g-md-4 g-lg-5">
+            <div className="col">
+              <div className="card h-100 border-0 text-center">
+                <div className="card-img-top">
+                  <Ecos1 className="img-fluid" />
+                </div>
+                <div className="card-body">
+                  <h4 className={classNames(styles.label, 'mb-2 fw-600')}>
+                    Storage Provider
+                  </h4>
+                  <p className="mb-0 text-gray">
+                    Increase liquidity leverage for fast growth
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card h-100 border-0 text-center">
+                <div className="card-img-top">
+                  <Ecos2 className="img-fluid" />
+                </div>
+                <div className="card-body">
+                  <h4 className={classNames(styles.label, 'mb-2 fw-600')}>
+                    SP Foundry
+                  </h4>
+                  <p className="mb-0 text-gray">
+                    Providing solutions for SP to expand power and make profit
+                    from the service.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card h-100 border-0 text-center">
+                <div className="card-img-top">
+                  <Ecos3 className="img-fluid" />
+                </div>
+                <div className="card-body">
+                  <h4 className={classNames(styles.label, 'mb-2 fw-600')}>
+                    Liquidity Fund
+                  </h4>
+                  <p className="mb-0 text-gray">
+                    Provide liquidity to pools, or acquire assets awaiting
+                    vesting, or provide bridge loans in SP transfers
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card h-100 border-0 text-center">
+                <div className="card-img-top">
+                  <Ecos4 className="img-fluid" />
+                </div>
+                <div className="card-body">
+                  <h4 className={classNames(styles.label, 'mb-2 fw-600')}>
+                    Service Provider
+                  </h4>
+                  <p className="mb-0 text-gray">
+                    Share your resource to SP, such as sealing power, FIL+
+                    DataCap, green data center, etc.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card h-100 border-0 text-center">
+                <div className="card-img-top">
+                  <Ecos5 className="img-fluid" />
+                </div>
+                <div className="card-body">
+                  <h4 className={classNames(styles.label, 'mb-2 fw-600')}>
+                    Developer
+                  </h4>
+                  <p className="mb-0 text-gray">
+                    Any expansion of the ecosystem will be supported by applying
+                    for grants.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card h-100 border-0 text-center">
+                <div className="card-img-top">
+                  <Ecos6 className="img-fluid" />
+                </div>
+                <div className="card-body">
+                  <h4 className={classNames(styles.label, 'mb-2 fw-600')}>
+                    Join DAO
+                  </h4>
+                  <p className="mb-0 text-gray">
+                    Participation in governance will be incentivized.
+                    Stakeholders are benefit from the long-term growth of FilFi.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={classNames(styles.section, styles.bg)}>
+        <div className="container">
+          <div className="text-center mb-5">
+            <h3 className={classNames(styles.label, 'fw-500')}>Powered by</h3>
+          </div>
+
+          <div className="d-flex flex-wrap align-items-center justify-content-center gap-4 gap-lg-5">
+            <img src={require('./imgs/partner-1.png')} />
+            <img src={require('./imgs/partner-2.png')} />
+            <img src={require('./imgs/partner-3.png')} />
+            <img src={require('./imgs/partner-4.png')} />
+            <img src={require('./imgs/partner-5.png')} />
+            <img src={require('./imgs/partner-6.png')} />
+          </div>
+        </div>
+      </section>
+
+      <section className={classNames(styles.section)}>
+        <div className="container">
+          <div className="row text-center mb-3 mb-md-4 mb-lg-5">
+            <div className="col-12 col-md-10 col-lg-8 offset-md-1 offset-lg-2">
               <h3 className={styles.title}>FilFi DAO</h3>
               <p className={classNames(styles.label, 'text-gray')}>
                 The FilFi DAO is a Decentralized Autonomous Organization that
@@ -380,7 +515,7 @@ export default function Home() {
                   <Dao1 />
                 </p>
 
-                <h4 className={classNames(styles.label, 'fw-semibold')}>
+                <h4 className={classNames(styles.label, 'fw-600')}>
                   Governance process
                 </h4>
                 <p className="text-gray">
@@ -396,7 +531,7 @@ export default function Home() {
                   <Dao2 />
                 </p>
 
-                <h4 className={classNames(styles.label, 'fw-semibold')}>
+                <h4 className={classNames(styles.label, 'fw-600')}>
                   Validator
                 </h4>
                 <p className="text-gray">
@@ -411,7 +546,7 @@ export default function Home() {
                   <Dao3 />
                 </p>
 
-                <h4 className={classNames(styles.label, 'fw-semibold')}>
+                <h4 className={classNames(styles.label, 'fw-600')}>
                   Technology Ambassador
                 </h4>
                 <p className="text-gray">
@@ -427,7 +562,7 @@ export default function Home() {
                   <Dao4 />
                 </p>
 
-                <h4 className={classNames(styles.label, 'fw-semibold')}>
+                <h4 className={classNames(styles.label, 'fw-600')}>
                   Community Ambassador
                 </h4>
                 <p className="text-gray">
@@ -441,9 +576,7 @@ export default function Home() {
                   <Dao5 />
                 </p>
 
-                <h4 className={classNames(styles.label, 'fw-semibold')}>
-                  Voting
-                </h4>
+                <h4 className={classNames(styles.label, 'fw-600')}>Voting</h4>
                 <p className="text-gray">
                   One token represents one vote, and members use the proposal
                   tool to indicate their preferences and attitudes.
@@ -456,7 +589,7 @@ export default function Home() {
                   <Dao6 />
                 </p>
 
-                <h4 className={classNames(styles.label, 'fw-semibold')}>
+                <h4 className={classNames(styles.label, 'fw-600')}>
                   FilFi Fundation
                 </h4>
                 <p className="text-gray">
@@ -530,16 +663,18 @@ export default function Home() {
                     rel="noreferrer"
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
-                      <div className="flex-shrink-0 pb-3">
+                      <div className="flex-shrink-0 mb-2 mb-lg-0">
                         <img
                           className="media-icon"
                           src={require('./imgs/icon-discord.png')}
                           alt="Discard"
                         />
                       </div>
-                      <div className="flex-grow-1 ms-3 ms-lg-4">
-                        <h5 className="mb-1 fs-30 fw-semibold">Discord</h5>
-                        <p className="d-none d-lg-block mb-0 fs-24 fw-semibold">
+                      <div className="flex-grow-1 ms-lg-4">
+                        <h5 className={classNames(styles.label, 'mb-2 fw-600')}>
+                          Discord
+                        </h5>
+                        <p className="d-none d-lg- fw-500block mb-0">
                           Join the community
                         </p>
                       </div>
@@ -554,16 +689,18 @@ export default function Home() {
                     rel="noreferrer"
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
-                      <div className="flex-shrink-0 pb-3">
+                      <div className="flex-shrink-0 mb-2 mb-lg-0">
                         <img
                           className="media-icon"
                           src={require('./imgs/icon-telegram.png')}
                           alt="Telegram"
                         />
                       </div>
-                      <div className="flex-grow-1 ms-3 ms-lg-4">
-                        <h5 className="mb-1 fs-30 fw-semibold">Telegram</h5>
-                        <p className="d-none d-lg-block mb-0 fs-24 text-gray fw-semibold">
+                      <div className="flex-grow-1 ms-lg-4">
+                        <h5 className={classNames(styles.label, 'mb-2 fw-600')}>
+                          Telegram
+                        </h5>
+                        <p className="d-none d-lg-block mb-0 fw-500 text-gray">
                           Join Chat
                         </p>
                       </div>
@@ -578,16 +715,18 @@ export default function Home() {
                     rel="noreferrer"
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
-                      <div className="flex-shrink-0 pb-3">
+                      <div className="flex-shrink-0 mb-2 mb-lg-0">
                         <img
                           className="media-icon"
                           src={require('./imgs/icon-github.png')}
                           alt="Github"
                         />
                       </div>
-                      <div className="flex-grow-1 ms-3 ms-lg-4">
-                        <h5 className="mb-1 fs-30 fw-semibold">Github</h5>
-                        <p className="d-none d-lg-block mb-0 fs-24 text-gray fw-semibold">
+                      <div className="flex-grow-1 ms-lg-4">
+                        <h5 className={classNames(styles.label, 'mb-2 fw-600')}>
+                          Github
+                        </h5>
+                        <p className="d-none d-lg-block mb-0 fw-500 text-gray">
                           Contribute
                         </p>
                       </div>
@@ -602,16 +741,18 @@ export default function Home() {
                     rel="noreferrer"
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
-                      <div className="flex-shrink-0 pb-3">
+                      <div className="flex-shrink-0 mb-2 mb-lg-0">
                         <img
                           className="media-icon"
                           src={require('./imgs/icon-twitter.png')}
                           alt="Twitter"
                         />
                       </div>
-                      <div className="flex-grow-1 ms-3 ms-lg-4">
-                        <h5 className="mb-1 fs-30 fw-semibold">Twitter</h5>
-                        <p className="d-none d-lg-block mb-0 fs-24 text-gray fw-semibold">
+                      <div className="flex-grow-1 ms-lg-4">
+                        <h5 className={classNames(styles.label, 'mb-2 fw-600')}>
+                          Twitter
+                        </h5>
+                        <p className="d-none d-lg-block mb-0 fw-500 text-gray">
                           Follow @FilFi
                         </p>
                       </div>
@@ -621,16 +762,18 @@ export default function Home() {
                 <div className="col">
                   <a className="card text-reset" href="mailto:dao@filfi.com">
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
-                      <div className="flex-shrink-0 pb-3">
+                      <div className="flex-shrink-0 mb-2 mb-lg-0">
                         <img
                           className="media-icon"
                           src={require('./imgs/icon-email.png')}
                           alt="E-Mail"
                         />
                       </div>
-                      <div className="flex-grow-1 ms-3 ms-lg-4">
-                        <h5 className="mb-1 fs-30 fw-semibold">Contact us</h5>
-                        <p className="d-none d-lg-block mb-0 fs-24 text-gray fw-semibold">
+                      <div className="flex-grow-1 ms-lg-4">
+                        <h5 className={classNames(styles.label, 'mb-2 fw-600')}>
+                          Contact us
+                        </h5>
+                        <p className="d-none d-lg-block mb-0 fw-500 text-gray">
                           dao@filfi.com
                         </p>
                       </div>
@@ -645,16 +788,18 @@ export default function Home() {
                     rel="noreferrer"
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
-                      <div className="flex-shrink-0 pb-3">
+                      <div className="flex-shrink-0 mb-2 mb-lg-0">
                         <img
                           className="media-icon"
                           src={require('./imgs/icon-facebook.png')}
                           alt="Facebook"
                         />
                       </div>
-                      <div className="flex-grow-1 ms-3 ms-lg-4">
-                        <h5 className="mb-1 fs-30 fw-semibold">Facebook</h5>
-                        <p className="d-none d-lg-block mb-0 fs-24 text-gray fw-semibold">
+                      <div className="flex-grow-1 ms-lg-4">
+                        <h5 className={classNames(styles.label, 'mb-2 fw-600')}>
+                          Facebook
+                        </h5>
+                        <p className="d-none d-lg-block mb-0 fw-500 text-gray">
                           Follow @FilFi
                         </p>
                       </div>
@@ -669,16 +814,18 @@ export default function Home() {
                     rel="noreferrer"
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
-                      <div className="flex-shrink-0 pb-3">
+                      <div className="flex-shrink-0 mb-2 mb-lg-0">
                         <img
                           className="media-icon"
                           src={require('./imgs/icon-medium.png')}
                           alt="Medium"
                         />
                       </div>
-                      <div className="flex-grow-1 ms-3 ms-lg-4">
-                        <h5 className="mb-1 fs-30 fw-semibold">Medium</h5>
-                        <p className="d-none d-lg-block mb-0 fs-24 text-gray fw-semibold">
+                      <div className="flex-grow-1 ms-lg-4">
+                        <h5 className={classNames(styles.label, 'mb-2 fw-600')}>
+                          Medium
+                        </h5>
+                        <p className="d-none d-lg-block mb-0 fw-500 text-gray">
                           Read @FilFi
                         </p>
                       </div>
@@ -693,16 +840,18 @@ export default function Home() {
                     rel="noreferrer"
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
-                      <div className="flex-shrink-0 pb-3">
+                      <div className="flex-shrink-0 mb-2 mb-lg-0">
                         <img
                           className="media-icon"
                           src={require('./imgs/icon-youtube.png')}
                           alt="Youtube"
                         />
                       </div>
-                      <div className="flex-grow-1 ms-3 ms-lg-4">
-                        <h5 className="mb-1 fs-30 fw-semibold">Youtube</h5>
-                        <p className="d-none d-lg-block mb-0 fs-24 text-gray fw-semibold">
+                      <div className="flex-grow-1 ms-lg-4">
+                        <h5 className={classNames(styles.label, 'mb-2 fw-600')}>
+                          Youtube
+                        </h5>
+                        <p className="d-none d-lg-block mb-0 fw-500 text-gray">
                           Follow @FilFi
                         </p>
                       </div>
@@ -715,7 +864,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={classNames(styles.section)}>
+      {/* <section className={classNames(styles.section)}>
         <div className="container">
           <div className="text-center mb-5">
             <h3 className={styles.title}>Frequently asked questions</h3>
@@ -724,7 +873,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* <div className="row mb-5">
+          <div className="row mb-5">
             <div className="col-12 col-md-10 col-lg-8 offset-md-1 offset-lg-2">
               <div className={classNames('accordion accordion-flush', styles.accordion)} id="accordionQS">
                 <div className="accordion-item">
@@ -801,11 +950,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
 
           <div className={classNames('card border-0', styles.bg)}>
             <div className="card-body text-center">
-              <h4 className={classNames(styles.label, 'fw-semibold mb-1')}>
+              <h4 className={classNames(styles.label, 'fw-600 mb-1')}>
                 Still have questions?
               </h4>
               <p className="text-gray mb-4">
@@ -825,7 +974,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

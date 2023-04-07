@@ -14,7 +14,6 @@ export default defineConfig({
   // routes
   routes,
 
-  model: {},
   title: 'FilFi',
   access: false,
   deadCode: {},
@@ -25,7 +24,8 @@ export default defineConfig({
     useLocalStorage: true,
   },
   request: {},
-  initialState: {},
+  model: false,
+  initialState: false,
   moment2dayjs: {},
   cssLoaderModules: {
     exportLocalsConvention: 'camelCase',
