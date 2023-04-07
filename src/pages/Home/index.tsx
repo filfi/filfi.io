@@ -10,14 +10,6 @@ import { ReactComponent as IconBorrow } from './imgs/icon-borrowing.svg';
 import { ReactComponent as IconRaise } from './imgs/icon-raising.svg';
 import { ReactComponent as IconToken } from './imgs/icon-tokenizing.svg';
 import { ReactComponent as IconBuild } from './imgs/icon-building.svg';
-import { ReactComponent as IconDiscord } from './imgs/icon-discord.svg';
-import { ReactComponent as IconTelegram } from './imgs/icon-telegram.svg';
-import { ReactComponent as IconGithub } from './imgs/icon-github.svg';
-import { ReactComponent as IconTwitter } from './imgs/icon-twitter.svg';
-import { ReactComponent as IconMail } from './imgs/icon-mail.svg';
-import { ReactComponent as IconFacebook } from './imgs/icon-facebook.svg';
-import { ReactComponent as IconMedium } from './imgs/icon-medium.svg';
-import { ReactComponent as IconYoutube } from './imgs/icon-youtube.svg';
 import { ReactComponent as Dao1 } from './imgs/dao-01.svg';
 import { ReactComponent as Dao2 } from './imgs/dao-02.svg';
 import { ReactComponent as Dao3 } from './imgs/dao-03.svg';
@@ -26,6 +18,14 @@ import { ReactComponent as Dao5 } from './imgs/dao-05.svg';
 import { ReactComponent as Dao6 } from './imgs/dao-06.svg';
 
 export default function Home() {
+  const goto = () => {
+    const el = document.querySelector('#community');
+
+    el?.scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <>
       {/* Banner */}
@@ -48,14 +48,13 @@ export default function Home() {
             Staking, Earning, Mining, All Built on FVM!
           </p>
           <p className="d-flex flex-column flex-md-row justify-content-center gap-3">
-            <a
+            <button
               className="btn btn-primary btn-lg order-md-2"
-              href="https://discord.gg/tht348jhuy"
-              target="_blank"
-              rel="noreferrer"
+              type="button"
+              onClick={goto}
             >
               Join Community
-            </a>
+            </button>
             <a
               className="btn btn-light btn-lg order-md-1"
               href="https://docs.filfi.io"
@@ -184,7 +183,7 @@ export default function Home() {
                     </h4>
                     <p className="mb-0 text-gray">
                       With the power NFT minted by FilFi, investors can trade
-                      power in any scale, opening up liquidity for minner.
+                      power in any scale, opening up liquidity for miner.
                     </p>
                   </div>
                 </div>
@@ -486,7 +485,7 @@ export default function Home() {
                 desc: 'Startup two projects covered staking and mining respectively',
               },
               { title: 'March 2023', desc: 'Merge two projects to FilFi' },
-              { title: 'April 2023', desc: 'Launch FilFi for minner' },
+              { title: 'April 2023', desc: 'Launch FilFi for miner' },
               { title: 'Jun 2023', desc: 'Open to staker and lender' },
               { title: 'August 2023', desc: 'Completed two rounds of audits' },
               {
@@ -498,7 +497,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={classNames(styles.section, styles.bg)}>
+      <section
+        id="community"
+        className={classNames(styles.section, styles.bg, styles.community)}
+      >
         <div className="container">
           <div className="text-center mb-5">
             <h3 className={styles.title}>Join our community</h3>
@@ -526,7 +528,11 @@ export default function Home() {
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
                       <div className="flex-shrink-0 pb-3">
-                        <IconDiscord />
+                        <img
+                          className="media-icon"
+                          src={require('./imgs/icon-discord.png')}
+                          alt="Discard"
+                        />
                       </div>
                       <div className="flex-grow-1 ms-3 ms-lg-4">
                         <h5 className="mb-1 fs-30 fw-semibold">Discord</h5>
@@ -539,14 +545,18 @@ export default function Home() {
                 </div>
                 <div className="col">
                   <a
-                    className="card"
+                    className="card text-reset"
                     href="https://t.me/+eDw3nnwV7xQwZGM9"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
                       <div className="flex-shrink-0 pb-3">
-                        <IconTelegram />
+                        <img
+                          className="media-icon"
+                          src={require('./imgs/icon-telegram.png')}
+                          alt="Telegram"
+                        />
                       </div>
                       <div className="flex-grow-1 ms-3 ms-lg-4">
                         <h5 className="mb-1 fs-30 fw-semibold">Telegram</h5>
@@ -566,7 +576,11 @@ export default function Home() {
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
                       <div className="flex-shrink-0 pb-3">
-                        <IconGithub />
+                        <img
+                          className="media-icon"
+                          src={require('./imgs/icon-github.png')}
+                          alt="Github"
+                        />
                       </div>
                       <div className="flex-grow-1 ms-3 ms-lg-4">
                         <h5 className="mb-1 fs-30 fw-semibold">Github</h5>
@@ -579,14 +593,18 @@ export default function Home() {
                 </div>
                 <div className="col">
                   <a
-                    className="card"
+                    className="card text-reset"
                     href="https://twitter.com/filfi_io"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
                       <div className="flex-shrink-0 pb-3">
-                        <IconTwitter />
+                        <img
+                          className="media-icon"
+                          src={require('./imgs/icon-twitter.png')}
+                          alt="Twitter"
+                        />
                       </div>
                       <div className="flex-grow-1 ms-3 ms-lg-4">
                         <h5 className="mb-1 fs-30 fw-semibold">Twitter</h5>
@@ -598,10 +616,14 @@ export default function Home() {
                   </a>
                 </div>
                 <div className="col">
-                  <a className="card" href="mailto:dao@filfi.com">
+                  <a className="card text-reset" href="mailto:dao@filfi.com">
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
                       <div className="flex-shrink-0 pb-3">
-                        <IconMail />
+                        <img
+                          className="media-icon"
+                          src={require('./imgs/icon-email.png')}
+                          alt="E-Mail"
+                        />
                       </div>
                       <div className="flex-grow-1 ms-3 ms-lg-4">
                         <h5 className="mb-1 fs-30 fw-semibold">Contact us</h5>
@@ -621,7 +643,11 @@ export default function Home() {
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
                       <div className="flex-shrink-0 pb-3">
-                        <IconFacebook />
+                        <img
+                          className="media-icon"
+                          src={require('./imgs/icon-facebook.png')}
+                          alt="Facebook"
+                        />
                       </div>
                       <div className="flex-grow-1 ms-3 ms-lg-4">
                         <h5 className="mb-1 fs-30 fw-semibold">Facebook</h5>
@@ -641,7 +667,11 @@ export default function Home() {
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
                       <div className="flex-shrink-0 pb-3">
-                        <IconMedium />
+                        <img
+                          className="media-icon"
+                          src={require('./imgs/icon-medium.png')}
+                          alt="Medium"
+                        />
                       </div>
                       <div className="flex-grow-1 ms-3 ms-lg-4">
                         <h5 className="mb-1 fs-30 fw-semibold">Medium</h5>
@@ -661,7 +691,11 @@ export default function Home() {
                   >
                     <div className="card-body d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
                       <div className="flex-shrink-0 pb-3">
-                        <IconYoutube />
+                        <img
+                          className="media-icon"
+                          src={require('./imgs/icon-youtube.png')}
+                          alt="Youtube"
+                        />
                       </div>
                       <div className="flex-grow-1 ms-3 ms-lg-4">
                         <h5 className="mb-1 fs-30 fw-semibold">Youtube</h5>
@@ -777,14 +811,13 @@ export default function Home() {
               </p>
 
               <p className="mb-0">
-                <a
+                <button
                   className="btn btn-primary btn-lg"
-                  href="https://discord.gg/tht348jhuy"
-                  target="_blank"
-                  rel="noreferrer"
+                  type="button"
+                  onClick={goto}
                 >
                   Join Community
-                </a>
+                </button>
               </p>
             </div>
           </div>

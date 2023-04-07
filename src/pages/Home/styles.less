@@ -92,6 +92,19 @@
   }
 }
 
+.community {
+  --media-icon-size: 48px;
+
+  :global {
+    .media-icon {
+      width: var(--media-icon-size);
+      height: var(--media-icon-size);
+      display: block;
+      object-fit: cover;
+    }
+  }
+}
+
 .accordion {
   --bs-accordion-color: inherit;
   --bs-accordion-btn-padding-x: 0;
@@ -155,6 +168,10 @@
     --section-title-font-size: 36px;
     --section-subtitle-margin-y: 32px;
     --section-subtitle-font-size: 24px;
+  }
+
+  .community {
+    --media-icon-size: 64px;
   }
 
   .accordion {

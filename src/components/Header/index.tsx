@@ -154,8 +154,8 @@ const Header: React.FC = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#minner">
-                    <FormattedMessage id="menu.minner" />
+                  <a className="nav-link" href="#miner">
+                    <FormattedMessage id="menu.miner" />
                   </a>
                 </li>
                 <li className="nav-item dropdown">
@@ -270,7 +270,7 @@ const Header: React.FC = () => {
                 </li>
               </ul>
 
-              <p className="mb-lg-0 ms-lg-2">
+              <p className="d-flex align-items-center mb-lg-0 ms-lg-2">
                 <a
                   className="btn btn-primary btn-join"
                   href="https://discord.gg/tht348jhuy"
