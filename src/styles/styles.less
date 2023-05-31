@@ -11,8 +11,12 @@ body {
   flex-direction: column;
 }
 
+:root {
+  --header-height: 80px;
+}
+
 body {
-  // padding-top: calc(var(--header-height, 0px) + 1rem);
+  padding-top: var(--header-height, 0);
 
   // text
   font-size: 14px;
@@ -31,7 +35,7 @@ a {
   padding-bottom: 0.01px;
 }
 
-.ff-layout-main {
+.ffi-layout-main {
   flex: 1 1 auto;
 }
 

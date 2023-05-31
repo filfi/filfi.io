@@ -4,7 +4,7 @@ import { useEventListener } from 'ahooks';
 import { Modal as BSModal } from 'bootstrap';
 import React, { useCallback, useImperativeHandle, useRef } from 'react';
 
-import * as U from './utils';
+import * as U from '@/utils/utils';
 import styles from './styles.less';
 import SpinBtn from '@/components/SpinBtn';
 import { mountPortal, unmountPortal } from '@/helpers/app';
@@ -233,13 +233,24 @@ const ModalRender: React.ForwardRefRenderFunction<ModalAttrs, ModalProps> = (
               ))}
 
             {closable && (
-              <button type="button" className="btn-close position-absolute end-0 top-0 me-3 mt-3" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button
+                type="button"
+                className="btn-close position-absolute end-0 top-0 me-3 mt-3"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             )}
           </div>
           <div className={classNames('modal-body text-break', bodyClassName)}>
             {children}
           </div>
-          <div className={classNames('modal-footer', { 'flex-column': btns.length > 2 }, footerClassName)}>
+          <div
+            className={classNames(
+              'modal-footer',
+              { 'flex-column': btns.length > 2 },
+              footerClassName,
+            )}
+          >
             {btns}
           </div>
         </div>

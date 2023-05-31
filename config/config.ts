@@ -20,7 +20,7 @@ export default defineConfig({
   layout: false,
   locale: {
     title: true,
-    default: 'en-US',
+    default: 'zh-CN',
     useLocalStorage: true,
   },
   request: {},

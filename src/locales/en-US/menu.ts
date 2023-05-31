@@ -1,9 +1,9 @@
 export default {
   'menu.home': 'Home',
-  'menu.staker': 'Staker',
+  'menu.lending': 'Lending',
   'menu.miner': 'Miner',
-  'menu.provider': 'Storage Provider',
-  'menu.governance': 'Governance',
-  'menu.community': 'Community',
-  'menu.documents': 'Documents',
+  'menu.raising': 'Raising',
+  'menu.storage': 'Storage Provider',
+  'menu.dao': 'FilFi DAO',
+  'menu.docs': 'Documents',
 };

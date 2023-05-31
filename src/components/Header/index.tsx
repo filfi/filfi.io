@@ -1,144 +1,146 @@
 import classNames from 'classnames';
-import { Collapse } from 'bootstrap';
-import { useEffect, useMemo, useRef } from 'react';
-import { FormattedMessage, Link, useLocation } from '@umijs/max';
-import { useBoolean, useClickAway, useEventListener, useScroll } from 'ahooks';
+import { Tooltip } from 'bootstrap';
+import { /* useBoolean, */ useMount, useScroll } from 'ahooks';
+import React, { /* useEffect, */ useMemo, useRef /* useState */ } from 'react';
+import {
+  FormattedMessage,
+  /* history, */ Link,
+  NavLink /* useLocation, useModel */,
+} from '@umijs/max';
 
 import './styles.less';
-import { ReactComponent as Logo } from '@/assets/brand.svg';
-import { ReactComponent as IconBook } from '@/assets/icons/book-closed.svg';
-import { ReactComponent as IconDiscord } from '@/assets/icons/discord.svg';
-import { ReactComponent as IconTelegram } from '@/assets/icons/telegram.svg';
-import { ReactComponent as IconTwitter } from '@/assets/icons/twitter.svg';
+// import SpinBtn from '../SpinBtn';
+// import { formatEther } from '@/utils/format';
+// import useAccounts from '@/hooks/useAccounts';
+import { ReactComponent as Brand } from '@/assets/brand.svg';
+// import { ReactComponent as IconUser } from '@/assets/icons/user-02.svg';
+// import { ReactComponent as IconWallet } from '@/assets/icons/wallet-03.svg';
 
 const headerHeight = 80;
-
-const providers = [
-  {
-    soon: true,
-    title: 'Borrow FIL',
-    desc: 'Collateralize storage power to smart contract and borrow more FIL to grow.',
-  },
-  {
-    soon: true,
-    title: 'Raise FIL',
-    desc: 'Raise pledged FIL  for new storage power and share the rewards with investors.',
-  },
-  {
-    soon: true,
-    title: 'SP Foundry',
-    desc: 'Teams with strong software and hardware technical expertise to help storage providers build or expand storage power.',
-  },
-  // {
-  //   title: 'Sealing as service',
-  //   desc: 'Share your powerful sealing resource to help Storage Provider and profit from the service.',
-  // },
-  // {
-  //   title: 'Fil+ Market',
-  //   desc: 'Exchange real data and DataCap within the community to promote data decentralization.',
-  // },
-];
-
-const governances = [
-  {
-    soon: true,
-    title: 'FiFiDAO guide',
-    desc: 'How to participate FilFi DAO community',
-  },
-  {
-    title: 'Ambassador',
-    desc: 'Community ambassadors are being recruited!',
-  },
-  {
-    soon: true,
-    title: 'Governance process',
-    desc: 'Governance process Explore how the decisions in Lido governance process are made',
-  },
-];
-
-const socials = [
-  {
-    icon: IconDiscord,
-    title: 'Discord',
-    desc: 'Ask us question',
-    url: 'https://discord.gg/tht348jhuy',
-  },
-  {
-    icon: IconTwitter,
-    title: 'Twitter',
-    desc: 'Follow us on @FilFi',
-    url: 'https://twitter.com/filfi_io',
-  },
-  {
-    icon: IconTelegram,
-    title: 'Telegram',
-    desc: 'Join disscution',
-    url: 'https://t.me/+eDw3nnwV7xQwZGM9',
-  },
-];
 
 const Header: React.FC = () => {
   // refs
   const header = useRef<HTMLDivElement>(null);
-  const collapse = useRef<HTMLDivElement>(null);
+
+  // models
+  // const { initialState } = useModel('@@initialState');
 
   // states
-  const [expand, { setTrue, setFalse }] = useBoolean(false);
+  // const [balance, setBalance] = useState<any>();
+  // const [isHover, { setTrue, setFalse }] = useBoolean(false);
 
   // hooks
   const position = useScroll();
-  const location = useLocation();
+  // const location = useLocation();
+  // const { accounts, getBalance, handleConnect, handleDisconnect } = useAccounts();
 
   const percent = useMemo(
-    () => Math.min((position?.top ?? 0) / headerHeight, 1),
-    [position],
+    () => Math.min(position?.top ?? 0, headerHeight) / headerHeight,
+    [position?.top],
   );
 
-  const closeCollapse = () => {
-    const instance = Collapse.getInstance(collapse.current);
+  // const fetchBalance = async () => {
+  //   if (!accounts[0]) return;
 
-    instance?.hide();
-  };
+  //   const balance = await getBalance(accounts[0]);
 
-  useClickAway(closeCollapse, header);
-  useEffect(closeCollapse, [location.pathname]);
-  useEventListener('show.bs.collapse', setTrue, { target: collapse });
-  useEventListener('hidden.bs.collapse', setFalse, { target: collapse });
+  //   setBalance(balance);
+  // };
+
+  // useEffect(() => {
+  //   fetchBalance();
+  // }, [accounts]);
+
+  // useEffect(setFalse, [location]);
+
+  useMount(() => {
+    document
+      .querySelectorAll('[data-bs-toggle="tooltip"]')
+      .forEach((el) => new Tooltip(el));
+  });
+
+  // const disconnect = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  //   e.preventDefault();
+
+  //   setFalse();
+
+  //   handleDisconnect();
+
+  //   history.replace('/');
+  // };
 
   return (
     <header
       ref={header}
-      className={classNames('header fixed-top', { shadow: expand })}
-      style={{
-        backgroundColor: expand ? '#fff' : `rgba(255, 255, 255, ${percent})`,
-        boxShadow: `0 3px 10px rgba(0, 0, 0, ${percent * 0.15})`,
-      }}
+      className={classNames('header fixed-top bg-white')}
+      style={{ boxShadow: `0 3px 10px rgba(0, 0, 0, ${percent * 0.15})` }}
     >
       <nav className="navbar navbar-expand-lg">
-        <div className="container">
+        <div className="container position-relative">
           <Link className="navbar-brand" to="/">
-            <Logo />
+            <Brand />
           </Link>
 
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#navbar-offcanvas"
-            aria-controls="navbar-offcanvas"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          {/* <div className="btn-group assets-bar" role="group" aria-label="Assets Bar">
+            {initialState?.connected ? (
+              <>
+                {initialState?.processing ? (
+                  <SpinBtn className="btn btn-outline-light" loading>
+                    <FormattedMessage id="notify.transaction.processing" />
+                  </SpinBtn>
+                ) : (
+                  <button className="btn btn-outline-light d-inline-flex align-items-center" type="button">
+                    <span className="lh-1">
+                      <IconWallet />
+                    </span>
+
+                    <span className="ms-1">{formatEther(balance)} FIL</span>
+                  </button>
+                )}
+                <div className="btn-group dropdown" role="group" onMouseEnter={setTrue} onMouseLeave={setFalse}>
+                  <Link to="/account" className="btn btn-outline-light rounded-end">
+                    <span className="lh-1">
+                      <IconUser />
+                    </span>
+                  </Link>
+
+                  <ul
+                    className={classNames('dropdown-menu dropdown-menu-end border-0 shadow rounded-4', { show: isHover })}
+                    data-bs-popper={isHover ? 'static' : undefined}
+                  >
+                    <li>
+                      <Link className="dropdown-item" to="/account">
+                        <span className="bi bi-person"></span>
+                        <span className="ms-2">个人资料</span>
+                      </Link>
+                    </li>
+                    <li className="dropdown-divider"></li>
+                    <li>
+                      <a className="dropdown-item" href="#" onClick={disconnect}>
+                        <span className="bi bi-box-arrow-right"></span>
+                        <span className="ms-2">退出</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </>
+            ) : (
+              <SpinBtn className="btn btn-outline-light btn-lg" loading={initialState?.connecting} onClick={handleConnect}>
+                <FormattedMessage id="actions.button.connect" />
+              </SpinBtn>
+            )}
+          </div> */}
 
           <div
+            id="navbarOffcanvas"
             className="offcanvas offcanvas-start"
             tabIndex={-1}
-            id="navbar-offcanvas"
-            aria-labelledby="navbarOffcanvas"
+            aria-labelledby="navbar offcanvas"
           >
             <div className="offcanvas-header">
-              <Logo />
+              <h4 className="offcanvas-title">
+                <Brand />
+              </h4>
               <button
                 type="button"
                 className="btn-close"
@@ -147,115 +149,82 @@ const Header: React.FC = () => {
               ></button>
             </div>
             <div className="offcanvas-body">
-              <ul className="nav navbar-nav me-lg-auto mb-3 mb-lg-0">
+              <ul className="nav navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link" href="#staker">
-                    <FormattedMessage id="menu.staker" />
+                  <a
+                    className="nav-link"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    data-bs-title="即将上线"
+                  >
+                    <FormattedMessage id="menu.lending" />
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#miner">
+                  <NavLink className="nav-link" to="/">
                     <FormattedMessage id="menu.miner" />
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link"
-                    href="#"
-                    role="button"
                     data-bs-toggle="dropdown"
                     data-bs-auto-close="true"
                     aria-expanded="false"
                   >
                     <span className="me-2">
-                      <FormattedMessage id="menu.provider" />
+                      <FormattedMessage id="menu.storage" />
                     </span>
-                    <i className="bi bi-chevron-down"></i>
+
+                    <span className="bi bi-chevron-down align-middle fw-600 text-gray-dark"></span>
                   </a>
-                  <div className="dropdown-menu">
-                    {providers.map((item, idx) => (
-                      <div key={idx} className="dropdown-item">
-                        <div className="flex-shrink-0">
-                          <IconBook />
-                        </div>
-                        <div className="flex-grow-1 ms-2 ms-md-3">
-                          {item.soon && (
-                            <span className="badge badge-outline float-end text-gray-light ms-2">
-                              coming soon
-                            </span>
-                          )}
-                          <h5 className="mb-1">{item.title}</h5>
-                          <p className="mb-0 text-gray">{item.desc}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    data-bs-auto-close="true"
-                    aria-expanded="false"
-                  >
-                    <span className="me-2">
-                      <FormattedMessage id="menu.governance" />
-                    </span>
-                    <i className="bi bi-chevron-down"></i>
-                  </a>
-                  <div className="dropdown-menu">
-                    {governances.map((item, idx) => (
-                      <div key={idx} className="dropdown-item">
-                        <div className="flex-shrink-0">
-                          <IconBook />
-                        </div>
-                        <div className="flex-grow-1 ms-2 ms-md-3">
-                          {item.soon && (
-                            <span className="badge badge-outline float-end text-gray-light ms-2">
-                              coming soon
-                            </span>
-                          )}
-                          <h5 className="mb-1">{item.title}</h5>
-                          <p className="mb-0 text-gray">{item.desc}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    data-bs-auto-close="true"
-                    aria-expanded="false"
-                  >
-                    <span className="me-2">
-                      <FormattedMessage id="menu.community" />
-                    </span>
-                    <i className="bi bi-chevron-down"></i>
-                  </a>
-                  <div className="dropdown-menu">
-                    {socials.map((item, idx) => (
-                      <a
-                        key={idx}
-                        className="dropdown-item"
-                        href={item.url}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <div className="flex-shrink-0">
-                          <item.icon />
-                        </div>
-                        <div className="flex-grow-1 ms-3">
-                          <h5 className="mb-1">{item.title}</h5>
-                          <p className="mb-0 text-gray">{item.desc}</p>
-                        </div>
+
+                  <div className="dropdown-menu border-0 shadow rounded-4">
+                    <div className="d-flex flex-column gap-2">
+                      <a className="dropdown-item d-flex px-4 py-3">
+                        <span className="me-3">Borrow FIL</span>
+                        <span className="badge ms-auto">coming soon</span>
                       </a>
-                    ))}
+                      <a className="dropdown-item d-flex px-4 py-3">
+                        <span className="me-3">Raise FIL</span>
+                        <span className="badge ms-auto">coming soon</span>
+                      </a>
+                      <a className="dropdown-item d-flex px-4 py-3">
+                        <span className="me-3">SP Foundry</span>
+                        <span className="badge ms-auto">coming soon</span>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li className="nav-item dropdown">
+                  <a
+                    className="nav-link"
+                    data-bs-toggle="dropdown"
+                    data-bs-auto-close="true"
+                    aria-expanded="false"
+                  >
+                    <span className="me-2">
+                      <FormattedMessage id="menu.dao" />
+                    </span>
+
+                    <span className="bi bi-chevron-down align-middle fw-600 text-gray-dark"></span>
+                  </a>
+
+                  <div className="dropdown-menu border-0 shadow rounded-4">
+                    <div className="d-flex flex-column gap-2">
+                      <a className="dropdown-item d-flex px-4 py-3">
+                        <span className="me-3">FilFi DAO Guide</span>
+                        <span className="badge ms-auto">coming soon</span>
+                      </a>
+                      <a className="dropdown-item d-flex px-4 py-3">
+                        <span className="me-3">Ambassador</span>
+                        <span className="badge ms-auto">coming soon</span>
+                      </a>
+                      <a className="dropdown-item d-flex px-4 py-3">
+                        <span className="me-3">Governance process</span>
+                        <span className="badge ms-auto">coming soon</span>
+                      </a>
+                    </div>
                   </div>
                 </li>
                 <li className="nav-item">
@@ -265,24 +234,39 @@ const Header: React.FC = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <FormattedMessage id="menu.documents" />
+                    <FormattedMessage id="menu.docs" />
                   </a>
                 </li>
               </ul>
-
-              <p className="d-flex align-items-center mb-lg-0 ms-lg-2">
-                <a
-                  className="btn btn-primary btn-join"
-                  href="https://discord.gg/tht348jhuy"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="bi bi-discord"></i>
-                  <span className="ms-2">Join Discord</span>
-                </a>
-              </p>
             </div>
           </div>
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navbarOffcanvas"
+            aria-controls="navbarOffcanvas"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          {/* <div ref={collapse} id="navbarCollapse" className="collapse navbar-collapse">
+            <ul className="nav navbar-nav flex-grow-1 mb-3 mb-lg-0">
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/">
+                  <FormattedMessage id="menu.home" />
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/raising">
+                  <FormattedMessage id="menu.raising" />
+                </NavLink>
+              </li>
+            </ul>
+          </div> */}
         </div>
       </nav>
     </header>

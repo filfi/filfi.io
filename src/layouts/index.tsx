@@ -1,14 +1,11 @@
+import { useState } from 'react';
 import { useMount } from 'ahooks';
 import { Outlet } from '@umijs/max';
 import { createPortal } from 'react-dom';
-import { createRef, useState } from 'react';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
-export const mountPortal = createRef<(node: React.ReactNode) => void>();
-export const unmountPortal = createRef<() => void>();
-
+import { mountPortal, unmountPortal } from '@/helpers/app';
 
 function getDom() {
   let dom = document.querySelector('#portal');
@@ -51,7 +48,7 @@ const BasicLayout: React.FC = () => {
     <>
       <Header />
 
-      <main className="ff-layout-main">
+      <main className="ffi-layout-main">
         <Outlet />
       </main>
 

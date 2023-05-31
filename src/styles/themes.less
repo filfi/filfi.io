@@ -25,18 +25,34 @@
   --color-primary: @primary;
   --color-success: @success;
   --text-main: @text-main;
+  --bs-gray: @gray-400;
+  --bs-gray-dark: @gray-600;
+  --bs-gray-50: @gray-50;
+  --bs-gray-100: @gray-100;
+  --bs-gray-200: @gray-200;
+  --bs-gray-300: @gray-300;
+  --bs-gray-400: @gray-400;
+  --bs-gray-500: @gray-500;
+  --bs-gray-600: @gray-600;
+  --bs-gray-700: @gray-700;
+  --bs-gray-900: @gray-900;
   --bs-primary: @primary;
-  --bs-danger: @danger;
-  --bs-danger-rgb: 240, 68, 56;
+  --bs-secondary: @gray-400;
+  --bs-warning: @warning;
   --bs-success: @success;
-  --bs-success-rgb: 75, 178, 39;
+  --bs-danger: @danger;
+  --bs-primary-rgb: 38, 153, 251;
+  --bs-warning-rgb: 220, 104, 3;
+  --bs-success-rgb: 2, 122, 72;
+  --bs-danger-rgb: 240, 68, 56;
+
   // --bs-body-bg: #f8f9fa;
   --bs-gutter-x: 1.875rem;
   --bs-body-color: @text-main;
   --bs-body-font-family: 'Inter', var(--bs-font-sans-serif);
   --bs-link-color: @link-color;
   --bs-link-hover-color: lighten(@link-color, 10%);
-  --bs-border-color: var(--color-gray-200);
+  --bs-border-color: var(--bs-gray-200);
 }
 
 /** alert **/
@@ -56,8 +72,8 @@
 
 /** badge **/
 .badge {
-  --bs-badge-bg: var(--color-gray-100);
-  --bs-badge-color: var(--color-gray-700);
+  --bs-badge-bg: var(--bs-gray-100);
+  --bs-badge-color: var(--bs-gray-700);
   --bs-badge-padding-x: 0.5rem;
   --bs-badge-padding-y: 0.125rem;
   --bs-badge-font-size: 0.75rem;
@@ -71,7 +87,7 @@
   &-outline {
     --bs-badge-bg: transparent;
     --bs-badge-border-width: 1px;
-    --bs-badge-border-color: var(--color-gray-300);
+    --bs-badge-border-color: var(--bs-gray-300);
 
     border: var(--bs-badge-border-width) solid var(--bs-badge-border-color);
   }
@@ -135,8 +151,8 @@
   &-primary {
     --bs-btn-bg: @primary;
     --bs-btn-border-color: @primary;
-    --bs-btn-hover-bg: darken(@primary, 5%);
-    --bs-btn-hover-border-color: darken(@primary, 5%);
+    --bs-btn-hover-bg: lighten(@primary, 5%);
+    --bs-btn-hover-border-color: lighten(@primary, 5%);
     --bs-btn-active-bg: darken(@primary, 10%);
     --bs-btn-active-border-color: darken(@primary, 10%);
     --bs-btn-disabled-bg: var(--color-primary-200);
@@ -173,9 +189,9 @@
     --bs-btn-active-color: var(--text-main);
     --bs-btn-active-bg: darken(@white, 10%);
     --bs-btn-active-border-color: darken(@white, 10%);
-    --bs-btn-disabled-color: var(--color-gray-300);
+    --bs-btn-disabled-color: var(--bs-gray-300);
     --bs-btn-disabled-bg: @white;
-    --bs-btn-disabled-border-color: var(--color-gray-200);
+    --bs-btn-disabled-border-color: var(--bs-gray-200);
   }
 
   &-dark {
@@ -195,7 +211,7 @@
   --bs-card-spacer-x: 16px;
   --bs-card-spacer-y: 16px;
   --bs-card-border-radius: 12px;
-  --bs-card-border-color: var(--color-gray-200);
+  --bs-card-border-color: var(--bs-gray-200);
   --bs-card-box-shadow: 0 1px 3px rgb(16 24 40 / 10%),
     0 1px 2px rgb(16 24 40 / 6%);
 }
@@ -207,34 +223,85 @@
 }
 
 /** utilities **/
-.text-gray-lighter {
-  --bs-color: var(--color-gray-200);
 
-  color: var(--color-gray-200);
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-30 {
+  font-size: 30px;
+}
+
+.fs-36 {
+  font-size: 30px;
+}
+
+.fs-sm {
+  font-size: 80%;
+}
+
+.fs-lg {
+  font-size: 120%;
+}
+
+.fs-xl {
+  font-size: 150%;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.text-main {
+  --bs-color: var(--color-main);
+
+  color: var(--text-main);
+}
+
+.text-gray-lighter {
+  --bs-color: var(--bs-gray-200);
+
+  color: var(--bs-gray-200);
 }
 
 .text-gray-light {
-  --bs-color: var(--color-gray-400);
+  --bs-color: var(--bs-gray-400);
 
-  color: var(--color-gray-400);
+  color: var(--bs-gray-400);
 }
 
 .text-gray {
-  --bs-color: var(--color-gray-600);
+  --bs-color: var(--bs-gray-500);
 
-  color: var(--color-gray-600);
+  color: var(--bs-gray-500);
 }
 
 .text-gray-dark {
-  --bs-color: var(--color-gray-700);
+  --bs-color: var(--bs-gray-600);
 
-  color: var(--color-gray-700);
+  color: var(--bs-gray-600);
 }
 
 .text-gray-darker {
-  --bs-color: var(--color-gray-800);
+  --bs-color: var(--bs-gray-700);
 
-  color: var(--color-gray-800);
+  color: var(--bs-gray-700);
 }
 
 .text-neutral {
@@ -247,4 +314,24 @@
   --bs-color: var(--color-primary);
 
   color: var(--color-primary);
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.vh-50 {
+  height: 50vh;
+}
+
+.vh-70 {
+  height: 70vh;
+}
+
+.vh-75 {
+  height: 75vh;
 }
