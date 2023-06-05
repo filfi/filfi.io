@@ -3,6 +3,9 @@ import { defineConfig } from '@umijs/max';
 import routes from './routes';
 
 export default defineConfig({
+  base: '',
+  publicPath: '',
+
   define: {
     'process.env': {
       API_URL: process.env.API_URL ?? '/api',
