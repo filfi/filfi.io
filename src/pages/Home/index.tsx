@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 
 import styles from './styles.less';
-import Steps from '@/components/Steps';
+// import Steps from '@/components/Steps';
 import { ReactComponent as IconStaking } from './imgs/icon-staking.svg';
 import { ReactComponent as IconMining } from './imgs/icon-mining.svg';
 import { ReactComponent as IconTrading } from './imgs/icon-trading.svg';
@@ -43,12 +43,12 @@ export default function Home() {
         )}
       >
         <div className="container text-center">
-          <p className="mb-4">
+          {/* <p className="mb-4">
             <span className="badge rounded-pill">
               <span className="badge rounded-pill">Comming Soon</span>
               <span className="ms-2">Genesis Pool will open in May 2023!</span>
             </span>
-          </p>
+          </p> */}
           <h2 className={styles.title}>Keep FIL Flowing</h2>
           <p className={styles.desc}>
             Staking, Earning, Mining, All Built on FVM!
@@ -61,14 +61,14 @@ export default function Home() {
             >
               Join Community
             </button>
-            <a
+            {/* <a
               className="btn btn-light btn-lg order-md-1"
               href="https://docs.filfi.io/en/introduction.html"
               target="_blank"
               rel="noreferrer"
             >
               Learn More
-            </a>
+            </a> */}
           </p>
         </div>
       </section>
@@ -603,7 +603,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="container">
+      {/* <div className="container">
         <div className="border-bottom"></div>
       </div>
 
@@ -631,7 +631,7 @@ export default function Home() {
             ]}
           />
         </div>
-      </section>
+      </section> */}
 
       <section
         id="community"
