@@ -2,9 +2,14 @@ import { defineConfig } from '@umijs/max';
 
 import routes from './routes';
 
+const BASE_PATH = process.env.BASE_PATH ?? '';
+
+const base = `${BASE_PATH}`.replace(/\/$/, '');
+const publicPath = `${BASE_PATH}/`.replace(/\/+/, '/');
+
 export default defineConfig({
-  base: '',
-  publicPath: '',
+  base,
+  publicPath,
 
   define: {
     'process.env': {
