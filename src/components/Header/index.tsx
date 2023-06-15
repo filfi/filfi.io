@@ -5,7 +5,7 @@ import React, { /* useEffect, */ useMemo, useRef /* useState */ } from 'react';
 import {
   FormattedMessage,
   /* history, */ Link,
-  NavLink /* useLocation, useModel */,
+  /* useLocation, useModel, */
   useIntl,
 } from '@umijs/max';
 
@@ -163,9 +163,9 @@ const Header: React.FC = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/">
+                  <Link className="nav-link" to="/">
                     <FormattedMessage id="menu.miner" />
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="nav-item dropdown">
                   <a
