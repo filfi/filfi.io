@@ -1,4 +1,5 @@
 export default {
+  'tips.commingsoon': 'Comming soon',
   'tips.collateral.node.action': 'I agree',
   'tips.collateral.node.title': 'What will happen after collateralizing node?',
   'tips.collateral.node.tips.1':

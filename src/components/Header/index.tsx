@@ -6,6 +6,7 @@ import {
   FormattedMessage,
   /* history, */ Link,
   NavLink /* useLocation, useModel */,
+  useIntl,
 } from '@umijs/max';
 
 import './styles.less';
@@ -31,6 +32,7 @@ const Header: React.FC = () => {
 
   // hooks
   const position = useScroll();
+  const { formatMessage } = useIntl();
   // const location = useLocation();
   // const { accounts, getBalance, handleConnect, handleDisconnect } = useAccounts();
 
@@ -155,7 +157,7 @@ const Header: React.FC = () => {
                     className="nav-link"
                     data-bs-toggle="tooltip"
                     data-bs-placement="bottom"
-                    data-bs-title="即将上线"
+                    data-bs-title={formatMessage({ id: 'tips.commingsoon' })}
                   >
                     <FormattedMessage id="menu.lending" />
                   </a>

@@ -1,4 +1,5 @@
 export default {
+  'tips.commingsoon': '即将上线',
   'tips.collateral.node.action': '我同意',
   'tips.collateral.node.title': '抵押节点后会发生什么？',
   'tips.collateral.node.tips.1':
