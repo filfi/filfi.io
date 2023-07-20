@@ -13,111 +13,133 @@ const partners = [
     img: require('./imgs/partners/sxx.png'),
     title: 'SXX',
     url: 'https://sxxfuture.com/',
+    height: 48,
   },
   {
     img: require('./imgs/partners/filfox.png'),
     title: 'Filfox',
     url: 'https://filfox.info/zh',
+    height: 48,
   },
   {
     img: require('./imgs/partners/FNS-DAO.png'),
     title: 'FNS DAO',
     url: 'https://fns.space/',
+    height: 48,
   },
   {
     img: require('./imgs/partners/filemarket.png'),
     title: 'Filemarket',
     url: 'https://filemarket.xyz/',
+    height: 48,
   },
   {
     img: require('./imgs/partners/filscan.png'),
     title: 'Filscan',
     url: 'https://filscan.io/',
+    height: 48,
   },
   {
     img: require('./imgs/partners/DSPA.png'),
     title: 'DSPA',
     url: 'https://dspa-asia.io',
+    height: 48,
   },
   {
     img: require('./imgs/partners/Flamelaunch.png'),
     title: 'Flamelaunch',
     url: 'https://www.flamelaunch.com',
+    height: 48,
   },
   {
     img: require('./imgs/partners/opengate.png'),
     title: 'opengate',
     url: 'https://fil.opengatenft.com/#/',
+    height: 48,
   },
   {
     img: require('./imgs/partners/SPex.png'),
     title: 'SPex',
     url: 'https://www.spex.website',
+    height: 41,
   },
   {
     img: require('./imgs/partners/vedao.png'),
     title: 'veDAO',
     url: 'https://www.vedao.com',
+    height: 48,
   },
   {
     img: require('./imgs/partners/MetaPath.png'),
     title: 'MetaPath',
     url: 'https://dapp.path.finance/#/swap?source=path-dapp',
+    height: 48,
   },
   {
     img: require('./imgs/partners/SWFT-Bridge.png'),
     title: 'SWFT Bridge',
     url: 'https://defi.swft.pro/#/',
+    height: 48,
   },
   {
     img: require('./imgs/partners/Filedoge.png'),
     title: 'Filedoge',
     url: 'https://filedoge.io',
+    height: 48,
   },
   {
     img: require('./imgs/partners/FileDrive.png'),
     title: 'FileDrive',
     url: 'https://filedrive.io',
+    height: 48,
   },
   {
     img: require('./imgs/partners/Filutils.png'),
     title: 'Filutils',
     url: 'https://www.filutils.com/zh',
+    height: 48,
   },
   {
     img: require('./imgs/partners/seer.png'),
     title: 'seer',
     url: 'https://seer.eco/#/',
+    height: 42,
   },
   {
     img: require('./imgs/partners/Cointime.png'),
     title: 'Cointime',
     url: 'https://www.cointime.com/',
+    height: 32,
   },
   {
     img: require('./imgs/partners/Filecoin.png'),
     title: 'Filecoin',
     url: 'https://filecoin.io/zh-cn/',
+    height: 38,
   },
   {
     img: require('./imgs/partners/FVM.png'),
     title: 'FVM',
     url: 'https://fvm.filecoin.io',
+    height: 38,
   },
   {
     img: require('./imgs/partners/Protocal-Labs.png'),
     title: 'Protocal Labs',
     url: 'https://protocol.ai',
+    height: 48,
   },
   {
     img: require('./imgs/partners/Filecoin-Foundation.png'),
     title: 'Filecoin Foundation',
     url: 'https://fil.org',
+    height: 42,
   },
   {
     img: require('./imgs/partners/filecoingreen.png'),
     title: 'filecoingreen',
     url: 'https://green.filecoin.io/',
+    height: 42,
   },
 ];
 
@@ -265,7 +287,7 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img src={item.img} alt={item.title} />
+                  <img src={item.img} height={item.height} alt={item.title} />
                 </a>
               </li>
             ))}
