@@ -168,7 +168,10 @@ const Header: React.FC = () => {
                   </Link>
                 </li>
                 <li className="nav-item dropdown">
-                  <a
+                  <a className="nav-link" href="https://mining.filfi.io/fspa">
+                    <FormattedMessage id="menu.storage" />
+                  </a>
+                  {/* <a
                     className="nav-link"
                     data-bs-toggle="dropdown"
                     data-bs-auto-close="true"
@@ -196,7 +199,7 @@ const Header: React.FC = () => {
                         <span className="badge ms-auto">coming soon</span>
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </li>
                 <li className="nav-item dropdown">
                   <a
