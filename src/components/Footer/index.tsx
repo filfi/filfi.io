@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
                   <dd className="d-flex flex-column">
                     <p>
                       <a
-                        href="https://docs.filfi.io/en/introduction.html"
+                        href="https://docs.filfi.io/en/introduction/"
                         target="_blank"
                         rel="noreferrer"
                       >

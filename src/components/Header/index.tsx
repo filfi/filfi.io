@@ -235,7 +235,7 @@ const Header: React.FC = () => {
                 <li className="nav-item">
                   <a
                     className="nav-link"
-                    href="https://docs.filfi.io/en/introduction.html"
+                    href="https://docs.filfi.io/en/introduction/"
                     target="_blank"
                     rel="noreferrer"
                   >
